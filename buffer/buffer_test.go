@@ -36,6 +36,14 @@ func TestGetLength(t *testing.T) {
   }
 }
 
+func TestGetCapacity(t *testing.T) {
+  emptyBuffer := NewBuffer(5)
+  capacity := emptyBuffer.GetCapacity()
+  if capacity != 5 {
+    t.Errorf("expected length to be 5, got %d", capacity)
+  }
+}
+
 func TestPut(t *testing.T) {
   oneItemBuffer := NewBuffer(5)
   oneItemBuffer.Put(1)
